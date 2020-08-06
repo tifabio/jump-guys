@@ -1,15 +1,22 @@
 {
   "group-list": [
     "default",
-    "walls"
+    "walls",
+    "platforms"
   ],
   "collision-matrix": [
     [
+      true,
       true,
       true
     ],
     [
       true,
+      false
+    ],
+    [
+      true,
+      false,
       false
     ]
   ],
@@ -38,6 +45,5 @@
     "live": {
       "enable": false
     }
-  },
-  "start-scene": "current"
+  }
 }
