@@ -11,7 +11,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.heroDiffY = 225;
+        this.heroDiffY = 224;
         this.physicsBox = this.node.getComponent(cc.PhysicsBoxCollider);
     },
 

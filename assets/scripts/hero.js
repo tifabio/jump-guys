@@ -48,8 +48,10 @@ cc.Class({
         this.rigidBody.applyForceToCenter(cc.v2(this.direction * this.walkSpeed, 0), true);
         if(this.rigidBody.linearVelocity.y > 0) {
             this.walkSpeed = 50;
-            this.animation.stop();
-            this.sprite.spriteFrame = this.spriteJump;
+            if(!this.touchingPlatform) {
+                this.animation.stop();
+                this.sprite.spriteFrame = this.spriteJump;
+            }
         } else if(this.rigidBody.linearVelocity.y < 0) {
             this.walkSpeed = 0;
             this.animation.stop();
@@ -66,7 +68,7 @@ cc.Class({
         if(otherCollider.node.group === this.wallCollider.group) {
             this.direction *= -1;
             this.spriteNode.scaleX = this.direction;
-            this.walkSpeed = 1000;
+            this.walkSpeed = 100;
         }
         if (otherCollider.node.group === this.platformCollider.group) {
             this.touchingPlatform = true;

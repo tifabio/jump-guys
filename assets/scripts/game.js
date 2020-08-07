@@ -5,9 +5,9 @@ cc.Class({
     },
 
     onLoad () {
+        this.debug = true;
         this.enablePhysics();
-
-        this.enableDebug(false);
+        cc.debug.setDisplayStats(false);
     },
 
     start () {
@@ -21,13 +21,13 @@ cc.Class({
         physicsManager.enabled = true;
     },
 
-    enableDebug(param) {
-        if(param) {
-            cc.debug.setDisplayStats(false);
-            cc.director.getPhysicsManager().debugDrawFlags = true;
-            cc.director.getCollisionManager().enabledDebugDraw = true;
-        } else {
-            cc.debug.setDisplayStats(false);
-        }
+    toggleDebug() {
+        cc.director.getPhysicsManager().debugDrawFlags = this.debug;
+        cc.director.getCollisionManager().enabledDebugDraw = this.debug;
+        this.debug = !this.debug
+    },
+
+    restart() {
+        cc.game.restart();
     }
 });
