@@ -10,6 +10,10 @@ cc.Class({
             default: null,
             type: cc.Node
         },
+        enemyCollision: {
+            default: null,
+            type: cc.Node
+        },
         spriteJump: {
             default: null,
             type: cc.SpriteFrame
@@ -19,9 +23,7 @@ cc.Class({
             type: cc.SpriteFrame
         },
         walkSpeed: 0,
-        jumpForce: 0,
-        direction: 1,
-        touchingPlatform: false,
+        jumpForce: 0
     },
 
     onLoad () {
@@ -32,6 +34,11 @@ cc.Class({
         this.spriteNode = this.node.children[0];
         this.sprite = this.spriteNode.getComponent(cc.Sprite);
         this.animation = this.spriteNode.getComponent(cc.Animation);
+
+        this.direction = 1;
+        this.touchingPlatform = false;
+        this.died = false;
+        this.deathAnimation = false;
     },
 
     start () {
@@ -45,21 +52,32 @@ cc.Class({
     },
 
     update (dt) {
-        this.rigidBody.applyForceToCenter(cc.v2(this.direction * this.walkSpeed, 0), true);
-        if(this.rigidBody.linearVelocity.y > 0) {
-            this.walkSpeed = 50;
-            if(!this.touchingPlatform) {
+        if(!this.died) {
+            this.rigidBody.applyForceToCenter(cc.v2(this.direction * this.walkSpeed, 0), true);
+            if(this.rigidBody.linearVelocity.y > 0) {
+                this.walkSpeed = 50;
+                if(!this.touchingPlatform) {
+                    this.animation.stop();
+                    this.sprite.spriteFrame = this.spriteJump;
+                }
+            } else if(this.rigidBody.linearVelocity.y < 0) {
+                this.walkSpeed = 0;
                 this.animation.stop();
-                this.sprite.spriteFrame = this.spriteJump;
+                this.sprite.spriteFrame = this.spriteFall;
+            } else {
+                this.walkSpeed = 100;
+                if (!this.animation.getAnimationState('running').isPlaying) {
+                    this.animation.start('running');
+                }
             }
-        } else if(this.rigidBody.linearVelocity.y < 0) {
-            this.walkSpeed = 0;
-            this.animation.stop();
-            this.sprite.spriteFrame = this.spriteFall;
         } else {
-            this.walkSpeed = 100;
-            if (!this.animation.getAnimationState('running').isPlaying) {
-                this.animation.start('running');
+            if(!this.deathAnimation) {
+                this.animation.getAnimationState('hitting').play();
+                this.animation.getAnimationState('hitting').onStop = () => {
+                    this.animation.stop();
+                    this.sprite.spriteFrame = null;
+                    this.deathAnimation = true;
+                };
             }
         }
     },
@@ -80,4 +98,15 @@ cc.Class({
             this.touchingPlatform = false;
         }
     },
+
+    onCollisionEnter(other, self) {
+        if(other.node.group === this.enemyCollision.group) {
+            this.death();
+        }
+    },
+
+    death() {
+        this.rigidBody.type = cc.RigidBodyType.Static;
+        this.died = true;
+    }
 });

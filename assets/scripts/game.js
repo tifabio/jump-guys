@@ -7,6 +7,7 @@ cc.Class({
     onLoad () {
         this.debug = true;
         this.enablePhysics();
+        this.enableCollisions();
         cc.debug.setDisplayStats(false);
     },
 
@@ -19,6 +20,11 @@ cc.Class({
     enablePhysics() {
         let physicsManager = cc.director.getPhysicsManager();
         physicsManager.enabled = true;
+    },
+
+    enableCollisions() {
+        let collisionManager = cc.director.getCollisionManager();
+        collisionManager.enabled = true;
     },
 
     toggleDebug() {
