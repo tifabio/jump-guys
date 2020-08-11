@@ -68,7 +68,7 @@ cc.Class({
         if(otherCollider.node.group === this.wallCollider.group) {
             this.direction *= -1;
             this.spriteNode.scaleX = this.direction;
-            this.walkSpeed = 100;
+            this.walkSpeed = 300;
         }
         if (otherCollider.node.group === this.platformCollider.group) {
             this.touchingPlatform = true;
