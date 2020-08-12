@@ -14,6 +14,10 @@ cc.Class({
             default: null,
             type: cc.Node
         },
+        trapCollision: {
+            default: null,
+            type: cc.Node
+        },
         spriteJump: {
             default: null,
             type: cc.SpriteFrame
@@ -37,8 +41,7 @@ cc.Class({
 
         this.direction = 1;
         this.touchingPlatform = false;
-        this.died = false;
-        this.deathAnimation = false;
+        this.alive = true;
     },
 
     start () {
@@ -52,7 +55,7 @@ cc.Class({
     },
 
     update (dt) {
-        if(!this.died) {
+        if(this.alive) {
             this.rigidBody.applyForceToCenter(cc.v2(this.direction * this.walkSpeed, 0), true);
             if(this.rigidBody.linearVelocity.y > 0) {
                 this.walkSpeed = 50;
@@ -69,15 +72,6 @@ cc.Class({
                 if (!this.animation.getAnimationState('running').isPlaying) {
                     this.animation.start('running');
                 }
-            }
-        } else {
-            if(!this.deathAnimation) {
-                this.animation.getAnimationState('hitting').play();
-                this.animation.getAnimationState('hitting').onStop = () => {
-                    this.animation.stop();
-                    this.sprite.spriteFrame = null;
-                    this.deathAnimation = true;
-                };
             }
         }
     },
@@ -100,13 +94,18 @@ cc.Class({
     },
 
     onCollisionEnter(other, self) {
-        if(other.node.group === this.enemyCollision.group) {
+        if(other.node.group === this.enemyCollision.group || other.node.group === this.trapCollision.group) {
             this.death();
         }
     },
 
     death() {
         this.rigidBody.type = cc.RigidBodyType.Static;
-        this.died = true;
+        this.alive = false;
+        this.animation.getAnimationState('hitting').play();
+        this.animation.getAnimationState('hitting').onStop = () => {
+            this.animation.stop();
+            this.sprite.spriteFrame = null;
+        };
     }
 });
