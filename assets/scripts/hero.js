@@ -18,14 +18,6 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-        spriteJump: {
-            default: null,
-            type: cc.SpriteFrame
-        },
-        spriteFall: {
-            default: null,
-            type: cc.SpriteFrame
-        },
         walkSpeed: 0,
         jumpForce: 0
     },
@@ -38,6 +30,9 @@ cc.Class({
         this.spriteNode = this.node.children[0];
         this.sprite = this.spriteNode.getComponent(cc.Sprite);
         this.animation = this.spriteNode.getComponent(cc.Animation);
+        
+        this.spriteJump = this.spriteNode.getComponent('herosprite').spriteJump;
+        this.spriteFall = this.spriteNode.getComponent('herosprite').spriteFall;
 
         this.direction = 1;
         this.touchingPlatform = false;
