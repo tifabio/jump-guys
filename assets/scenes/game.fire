@@ -1544,7 +1544,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 16,
-      "height": 48
+      "height": 56
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1622,14 +1622,14 @@
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 8,
-      "y": 24
+      "y": 28
     },
     "_size": {
       "__type__": "cc.Size",
       "width": 16,
-      "height": 48
+      "height": 56
     },
-    "_id": "9cNCsZnrhNY7ZHQSuFf5lL"
+    "_id": "feSHH0KxRBjYkCyjVbXU+4"
   },
   {
     "__type__": "cc.Node",
@@ -4512,13 +4512,13 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -2,
       "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 5,
-      "height": 5
+      "width": 4,
+      "height": 4
     },
     "_id": "c8Ypg+7XtCI4Y0hXOVJhI8"
   },
@@ -4658,13 +4658,13 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -2,
       "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 5,
-      "height": 5
+      "width": 4,
+      "height": 4
     },
     "_id": "f5UZK+m2RO9LLqADLxgjyC"
   },
@@ -4804,13 +4804,13 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -2,
       "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 5,
-      "height": 5
+      "width": 4,
+      "height": 4
     },
     "_id": "96RscUzjZPJpD4aQOOBUJK"
   },
@@ -4950,13 +4950,13 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -2,
       "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 5,
-      "height": 5
+      "width": 4,
+      "height": 4
     },
     "_id": "078zPEStFLmJeAWKf05m88"
   },
@@ -5096,13 +5096,13 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -2,
       "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 5,
-      "height": 5
+      "width": 4,
+      "height": 4
     },
     "_id": "cemtkjrZ5G15QuaI3HMXue"
   },
@@ -5242,13 +5242,13 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -2,
       "y": 0
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 5,
-      "height": 5
+      "width": 4,
+      "height": 4
     },
     "_id": "4bHrCi+3pI+YDSc0ZEcqYc"
   },
