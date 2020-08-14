@@ -9,7 +9,8 @@ cc.Class({
 
     onLoad () {
         this.initX = this.node.x;
-        this.flySpeed = this.node.scaleX * 3;
+        this.initY = this.node.y;
+        this.flySpeed = this.node.scaleX * 2;
         this.flyStop = false;
     },
 
@@ -24,6 +25,7 @@ cc.Class({
             this.node.x = this.initX;
             this.flyStop = false;
         }
+        this.node.y = this.initY;
     },
 
     onBeginContact() {
