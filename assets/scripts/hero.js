@@ -101,6 +101,7 @@ cc.Class({
         this.animation.getAnimationState('hitting').onStop = () => {
             this.animation.stop();
             this.sprite.spriteFrame = null;
+            this.node.setPosition(0,0);
         };
     }
 });
