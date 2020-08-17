@@ -18,6 +18,10 @@ cc.Class({
             default: null,
             type: cc.Node
         },
+        itemCollision: {
+            default: null,
+            type: cc.Node
+        },
         walkSpeed: 0,
         jumpForce: 0
     },
@@ -91,6 +95,9 @@ cc.Class({
     onCollisionEnter(other, self) {
         if(other.node.group === this.enemyCollision.group || other.node.group === this.trapCollision.group) {
             this.death();
+        }
+        if(other.node.group === this.itemCollision.group) {
+            this.node.emit('score');
         }
     },
 

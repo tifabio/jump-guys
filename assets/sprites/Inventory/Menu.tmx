@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<map version="1.2" orientation="orthogonal" renderorder="right-down" width="15" height="1" tilewidth="20" tileheight="42" nextobjectid="1">
+  <tileset firstgid="1" name="menu" columns="3" tilecount="2" tileheight="42" tilewidth="20">
+    <image source="menu.png" width="60" height="42" />
+  </tileset>
+  <layer name="Layer 1" width="15" height="1">
+    <data encoding="base64" compression="zlib">
+   eJxjZGBgYCIDMwMxAAPEAB8=
+  </data>
+  </layer>
+</map>

@@ -1,7 +1,17 @@
+let globals = require('globals');
+
 cc.Class({
     extends: cc.Component,
 
     properties: {
+        hero: {
+            default: null,
+            type: cc.Node
+        },
+        score: {
+            default: null,
+            type: cc.Label
+        }
     },
 
     onLoad () {
@@ -9,6 +19,13 @@ cc.Class({
         this.enablePhysics();
         this.enableCollisions();
         cc.debug.setDisplayStats(false);
+
+        this.hero.on('score', () => {
+            globals.score += (globals.score < 99) ? 1 : 0;
+            this.score.string = globals.score > 9 ? `${globals.score}` : `0${globals.score}`;
+        });
+
+        this.score.string = globals.score > 9 ? `${globals.score}` : `0${globals.score}`;
     },
 
     start () {
