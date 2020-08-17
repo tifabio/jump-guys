@@ -1,3 +1,3 @@
 module.exports = {
-    score: 97
+    score: 0
 };
