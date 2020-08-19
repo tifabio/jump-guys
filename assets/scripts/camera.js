@@ -20,6 +20,8 @@ cc.Class({
         let heroPosition = this.Hero.getPosition();
         let cameraPosition = this.node.getPosition();
         cameraPosition.lerp(heroPosition, 0.1, cameraPosition);
-        this.node.setPosition(0, cameraPosition.y);
+        if(cameraPosition.y > 0) {
+            this.node.setPosition(0, cameraPosition.y);
+        }
     },
 });
