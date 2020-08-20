@@ -10,11 +10,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        this.node.on(cc.Node.EventType.TOUCH_START, () => {
-            cc.log('aqui'); 
-        })
-    },
+    // onLoad () {},
 
     start () {
 

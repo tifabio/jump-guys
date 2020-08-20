@@ -15,6 +15,7 @@ cc.Class({
     },
 
     onLoad () {
+        globals.storage = cc.sys.localStorage;
         this.debug = true;
         this.enablePhysics();
         this.enableCollisions();
