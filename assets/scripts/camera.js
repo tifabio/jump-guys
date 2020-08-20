@@ -10,7 +10,10 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        this.minY = 0;
+        this.maxY = 520;
+    },
 
     start () {
 
@@ -20,7 +23,7 @@ cc.Class({
         let heroPosition = this.Hero.getPosition();
         let cameraPosition = this.node.getPosition();
         cameraPosition.lerp(heroPosition, 0.1, cameraPosition);
-        if(cameraPosition.y > 0) {
+        if(cameraPosition.y > this.minY && cameraPosition.y < this.maxY) {
             this.node.setPosition(0, cameraPosition.y);
         }
     },
