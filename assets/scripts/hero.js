@@ -22,13 +22,17 @@ cc.Class({
             default: null,
             type: cc.Node
         },
+        cameraNode: {
+            default: null,
+            type: cc.Node
+        },
         walkSpeed: 0,
         jumpForce: 0
     },
 
     onLoad () {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.jump, this);
-        this.node.parent.on(cc.Node.EventType.TOUCH_START, this.jump, this);
+        this.cameraNode.on(cc.Node.EventType.TOUCH_START, this.jump, this);
 
         this.rigidBody = this.node.getComponent(cc.RigidBody);
         this.spriteNode = this.node.children[0];
@@ -47,7 +51,10 @@ cc.Class({
 
     },
 
-    jump() {
+    jump(ev) {
+        if (ev.keyCode === cc.macro.KEY.back) {
+            cc.game.end();
+        }
         if(this.touchingPlatform) {
             this.rigidBody.applyForceToCenter(cc.v2(0, this.jumpForce), true);
         }
