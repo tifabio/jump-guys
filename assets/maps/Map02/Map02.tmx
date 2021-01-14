@@ -1,12 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <map version="1.2" orientation="orthogonal" renderorder="right-down" width="20" height="35" tilewidth="16" tileheight="16" nextobjectid="1">
+  <properties>
+    <property name="sw1" value="165" />
+  </properties>
   <tileset firstgid="1" name="Terrain (16x16)" columns="22" tilecount="242" tileheight="16" tilewidth="16">
     <image source="Terrain (16x16).png" width="352" height="176" />
     <tile id="227" />
   </tileset>
   <layer name="Layer 1" width="20" height="35">
     <data encoding="base64" compression="zlib">
-   eJy1lU1KA0EQhd8VjN4il1DQZJGMiOBacwiN7twbcwIhCyG4layN2Ynr0ezEveYQVmE1U2m7OvPTFnxgYPqj+9G+ngHoIM08Eq/ENJHvRflSOJ0vJ7Ybkgf21xTtSzHaN2nomijfAHYuO8SWfO/TQji/ITZn0w7sqY1wfkPjDHslztlVhHzdEo5NvlPEM9wErz9TvnOUy9DCrfd9dUf7Pmv6XCfp/X0QC/l9ib8Z8t279+gI7u5xdlfiY9dSfBcoMvTnQLCyc2vZtcLv3R4RtxXPzHMja3PleiLmxLOxP2um3lp2zdC8+xy675vSR7z/joHdI+Ca/z4pef6UfZoh/n7w3ds3aAW+/8/3I6twLpdlFqCOz03MVyUnq/8GSJef339vxHtknxaW74v4JsbyXZmJ7c/1f903hH0LrPc9d5jr1H6N/JZY//8YoehA9h0KofU94U7gDlyheD/mCu6xB8nS2k9PoTuQ348fsv3k1Q==
+   eJytlT9KQ0EQh39XMHqLXEJBkyJ5IoK15hAa7eyNOYGQQgy2ktqYTqyj6cRecwhncJY3WXfen3078EEe7H7MDpvfzgB0kKaeiDdimsj3qnwpnM73kAi/v6ZoX4rSvklD10T5BsS2wQ6xJet9WmrdUvmGKJ9NO9BTG+H5DY0z7FU4Z1cR8nUrOMp8pyieYRm8/0z5zlFthhZuv++LLe37ivS5TNL9fRIL+b7E/xny3bv36Aju7vHsrsTHrpX4LpDP0K8DwZqd28uuNf7u9oi4rXlmrhvZu1SuZ2JOvBj9WTX19rJrhvh756Pzvil9FOffMbB7BFzz75OK50+Zp5ny8RxDubdv0Aqs1/mX+v3IapzLzTILEONzVeSrMycr/wZINz8//96Jj4I+LSzfN/FDjGVdlSrqz+V/7BvCvgU2854zzGVqP2J+K2z+P0bIM5B9h0Jof0+4EzgD18jfj7mCc+xRZmn101PoDOT34xcS/u2Z
   </data>
   </layer>
 </map>
